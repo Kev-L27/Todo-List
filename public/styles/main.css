@@ -1,0 +1,101 @@
+body{
+	background-color: antiquewhite;
+}
+
+input:checked+p{
+	color: red;
+	text-decoration: line-through;
+}
+
+.title{
+	background-color: blueviolet;
+	color: white;
+	width: 40%;
+	height: 60px;
+	position: relative;
+	left: 50%;
+	transform: translate(-50%, 0);
+	text-align: center;
+	line-height: 60px;
+	border-radius: 25px;
+}
+
+
+.items{
+	display: inline;
+}
+
+p{
+	display: inline-block;
+}
+
+.singleItem, .newInput{
+	background-color: white;
+	border-bottom: 1px solid lightgray;
+	width: 40%;
+	height: 40px;
+	position: relative;
+	left: 49%;
+	transform: translate(-50%, 0);
+	border-radius: 15px;
+	margin-bottom: 10px;
+}
+
+.singleItem:hover{
+	background-color: bisque;
+	box-shadow: 0 6px 10px rgba(0, 0, 0, 0.2);
+}
+
+.newInput{
+	width: 20%;
+	display: flex;
+	align-items: center;
+}
+
+#inputText{ /* input form outside textbox */
+	width: 100%;
+}
+
+#newItem{ /* input textbox */
+	width: 90%;
+	height: 40px;
+	border: 0px;
+	box-sizing: border-box;
+	border-radius: 15px;
+	padding: 12px;
+}
+
+.deleteItem{
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	position: relative;
+	right: 22px;
+}
+
+button{
+	background-color: cyan;
+	border: none;
+	border-radius: 5px;
+}
+
+#clearButton{
+	width: 80px;
+	height: 50px;
+	font-size: 12px;
+	font-weight: bold;
+	font-family: 'Roboto', sans-serif;
+	border-radius: 25px;
+	box-shadow: 0 6px 10px rgba(0, 0, 0, 0.2);
+}
+
+#insertButton{
+	width: 30px;
+	height: 30px;
+	box-sizing: border-box;
+	border-radius: 50%;
+}
+
+button:hover{
+	cursor: pointer;
+}

@@ -1,0 +1,38 @@
+<%- include("partials/header.ejs") %>
+
+
+<div>
+	<% if (listTitle === "Today") { %>
+		<h1 class="title">Today - (<%= new Date().toUTCString().slice(0, 16) %>)</h1>
+	<% } else { %>
+		<h1 class="title"><%= listTitle %></h1>
+	<% } %>
+</div>
+
+<div>
+	<ul>
+		<% if (locals.listItems) { %>
+			<% listItems.forEach((todo) => { %>
+				<form action="/done" method="POST">
+					<div class="singleItem">
+						<input class="items" type="checkbox" name="checkbox" value="<%= todo._id %>" onchange="this.form.submit()">
+						<p><%= todo.name %></p>
+					</div>
+					<input type="hidden" name="listName" value="<%= listTitle %>">
+				</form>
+				
+			<% }) %>
+		<% } %>
+		<div class="newInput">
+			<form id="inputText" action="/submit" method="POST">
+			<input id="newItem" type="text" name="newItem" placeholder="New Item">
+			<button id="insertButton" type="submit" name="newList" value="<%= listTitle %>">+</button>
+			</form>
+		</div>
+		<div class="deleteItem">
+			<form action="/delete" method="POST">
+				<button id="clearButton" type="submit" name="RemoveList" value="<%= listTitle %>">Clear List</button>
+			</form>
+		</div>
+	</ul>
+</div>
